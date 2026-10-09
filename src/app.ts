@@ -18,4 +18,12 @@ app.get('/api/health', (_request, response) => {
   });
 });
 
+app.get('/api/version', (_request, response) => {
+  const version = process.env.APP_VERSION ?? 'development';
+
+  response.json({
+    version,
+  });
+});
+
 export default app;
